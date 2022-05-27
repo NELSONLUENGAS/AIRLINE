@@ -28,7 +28,7 @@ export default function Menu({expand}){
                 <div className='menuElement2'>
                     {Items.length  && Items.map(item =>
                         <Link key={item.name} to='form' smooth={true} duration={1500} offset={-30}>
-                            <li onClick={handleOnClick}  title={item.name}>{item.name}</li>
+                            <li onTouchStart={handleOnClick} onClick={handleOnClick}  title={item.name}>{item.name}</li>
                         </Link>
                     )}
                 </div>
@@ -36,7 +36,7 @@ export default function Menu({expand}){
                 <div className='menuElement2_1'>
                     {Items.length  && Items.map(item =>
                         <Link key={item.name} to='form' smooth={true} duration={1500} offset={-30}>
-                            <li onClick={handleOnClick}  title={item.name}>{item.name}</li>
+                            <li onTouchStart={handleOnClick} onClick={handleOnClick}  title={item.name}>{item.name}</li>
                         </Link>
                     )}
                 </div>
