@@ -14,6 +14,14 @@ export default function Menu({expand}){
             form: true
         })
     }
+    function handleOnTouch(event){
+        const { title } = event.targetTouches
+        setExpandMenu(true)
+        expand(event, {
+            airline: title,
+            form: true
+        })
+    }
     function handleExpandMenu(event){
         event.preventDefault();
         setExpandMenu(!expandMenu)
@@ -28,7 +36,7 @@ export default function Menu({expand}){
                 <div className='menuElement2'>
                     {Items.length  && Items.map(item =>
                         <Link key={item.name} to='form' smooth={true} duration={1500} offset={-30}>
-                            <li onTouchStart={handleOnClick} onClick={handleOnClick}  title={item.name}>{item.name}</li>
+                            <li onTouchStart={handleOnTouch} onClick={handleOnClick}  title={item.name}>{item.name}</li>
                         </Link>
                     )}
                 </div>
@@ -36,7 +44,7 @@ export default function Menu({expand}){
                 <div className='menuElement2_1'>
                     {Items.length  && Items.map(item =>
                         <Link key={item.name} to='form' smooth={true} duration={1500} offset={-30}>
-                            <li onTouchStart={handleOnClick} onClick={handleOnClick}  title={item.name}>{item.name}</li>
+                            <li onTouchStart={handleOnTouch} onClick={handleOnClick}  title={item.name}>{item.name}</li>
                         </Link>
                     )}
                 </div>
